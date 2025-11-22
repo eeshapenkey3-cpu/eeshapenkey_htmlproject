@@ -1,6 +1,58 @@
-<<<<<<< HEAD
-.heading {
-  text-align: center;
-  margin-top: 50px;
 
+.main-layout-wrapper {
+    display: flex;           
+	margin: 0;
+    padding: 0;
+	width: 100%;
+    align-items: center;	 
+    position: relative;	
+	justify-content: flex-start;
+}
+* {background-color: #F6BD1F;}
+
+.heading {
+	position: absolute; 
+    top: 50%;           
+    left: 50%;          
+    transform: translate(-50%, -50%);
+    text-align: center;
+    margin-top: 0; 
+    flex-grow: 1; 
+    font-family: "Exo 2", sans-serif;
+    font-weight: 900;
+    font-style: normal;
+    font-size: 70px;
+	color: #197C9D; 
+    /*text-shadow: 2px 2px 4px rgba(0,0,0,0.5); */
+	z-index: 10;
+	/*color: #F6BD1F;*/
+	background-color: transparent;
+
+}
+
+.left-side-container {
+    background-image: url('sunrise.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 400px;
+    height: 300px;
+    text-align:left;
+	margin-top:-100px
+}
+
+
+.right-side-container {
+	margin-top:120px;
+    background-image: url('seedlings.jpg');
+    width: 300px;
+    height: 350px;
+    background-repeat: no-repeat;
+	align-self: flex-end;
+	/*margin-left: 150px;*/
+	margin-left: auto;
+}
+
+.icons {
+	font-size: 50px
 }
