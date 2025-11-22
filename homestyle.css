@@ -106,3 +106,58 @@ body {
     transform: translateX(-100%);
   }
 }
+
+.abouthead {
+  font-family: "Exo 2", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 900;
+  font-style: normal;
+  font-size: 70px;
+  color: #197C9D; 
+  text-align: center;	
+  margin-top: 70px;
+}
+.text-content-container {
+  font-family: "Exo 2", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 350;
+  font-style: normal;
+  font-size: 25px;
+  width: 80%; 
+  max-width: 1000px; 
+  margin-left: auto;
+  margin-right: auto;
+    margin-top: 30px; 
+    margin-bottom: 30px;
+    text-align: left; 
+    color: black; 
+    font-size: 18px;
+    line-height: 1.6;
+}
+.parent-container {
+  display: flex;
+  justify-content: flex-end; 
+}
+
+.content-box {
+	margin-left:30px;
+	margin-right:600px;
+  width: 120%;
+  max-width: 800px;
+   position: relative;
+}
+.logo {
+  float: right;
+  margin-left: 30px; 
+  margin-bottom: 10px;
+  position: absolute;
+  top: 0; 
+  right: -250px;
+}
+
+.eesha {
+	display: block;   
+  width: 80%;       
+  margin-left: auto; 
+  margin-right: 0;
+}
