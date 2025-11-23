@@ -112,7 +112,7 @@ body {
   font-optical-sizing: auto;
   font-weight: 900;
   font-style: normal;
-  font-size: 70px;
+  font-size: 80px;
   color: #197C9D; 
   text-align: center;	
   margin-top: 70px;
@@ -155,9 +155,133 @@ body {
   right: -250px;
 }
 
-.eesha {
-	display: block;   
-  width: 80%;       
-  margin-left: auto; 
-  margin-right: 0;
+
+.members {
+    display: flex; 
+    flex-wrap: wrap; 
+    justify-content: space-around; 
+    gap: 5px; 
+    align-items: flex-start; 
+    margin-top: 50px; 
 }
+
+.member-profile {
+    text-align: center; 
+    margin: 10px; 
+    width: 220px;
+}
+
+
+.member-profile p {
+    margin: 5px 0;
+    color: #333;
+}
+
+.members-section h1 {
+    text-align: center;
+    margin-bottom: 30px; 
+font-family: "Exo 2", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 60px;
+
+}
+
+
+.members-section {
+    padding: 20px; 
+}
+
+        .contact-container {
+            width: 100%;
+            max-width: 1000px; 
+			margin-left:auto;
+			margin-right:auto;
+            display: grid;
+            gap: 40px;
+			padding: 0;
+            grid-template-columns: 1fr;
+        }
+        @media (min-width: 1024px) {
+            .contact-container {
+                grid-template-columns: 1fr 1.5fr; 
+            }
+        }
+		
+        .info-section {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .outline-box {
+            padding: 5px;
+            display: flex;
+            align-items: left;
+            justify-content: left;
+            box-sizing: border-box;
+        }
+
+        .contact-us-box {
+            width: 60%; 
+            text-align: left;
+            font-size: 14px;
+            font-weight: bold;
+			font-family: "Exo 2", sans-serif;
+        }
+
+
+        .get-in-touch-box h1 {
+            font-size: 36px;
+            line-height: 1.1;
+            margin: 0;
+            font-weight: 800;
+			font-family: "Exo 2", sans-serif;
+        }
+
+
+        .form-section {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+
+        .input-group label {
+            display: block;
+            font-size: 14px;
+            font-weight: bold;
+			margin-top: 40px;
+        }
+
+        .input-field {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #999;
+            box-sizing: border-box;
+            font-size: 16px;
+            resize: vertical; 
+            
+        }
+
+        .checkbox-group {
+            display: flex;
+            align-items: center;
+            padding-top: 10px;
+        }
+
+        .custom-checkbox {
+            width: 20px;
+            height: 20px;
+            border: 1px solid black;
+            margin-right: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+        }
+
+        .custom-checkbox span {
+            visibility: visible;
+            color: black;
+        }
