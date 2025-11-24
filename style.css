@@ -1,3 +1,4 @@
+/*-----------------------------------------------------------------home---------------------------------------------------------------------------*/
 .main-layout-wrapper {
     display: flex;           
 	margin: 0;
@@ -15,6 +16,9 @@
 
 body {
     background-color: #F6BD1F;
+	font-family: "Exo 2", sans-serif;
+    font-weight: 400;
+    font-style: normal;
 }
 ul {
   list-style-type: none;
@@ -139,6 +143,7 @@ ul li a:hover {
     transform: translateX(-100%);
   }
 }
+/*---------------------------------------------------------------------about us-------------------------------------------------------------------*/
 .abouthead {
   font-family: "Exo 2", sans-serif;
   font-weight: 900;
