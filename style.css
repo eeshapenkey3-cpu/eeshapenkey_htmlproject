@@ -257,9 +257,10 @@ font-family: "Exo 2", sans-serif;
         .contact-us-box {
             width: 60%; 
             text-align: left;
-            font-size: 14px;
+            font-size: 26px;
             font-weight: bold;
 			font-family: "Exo 2", sans-serif;
+			font-weight:800;
         }
 
 
