@@ -1,4 +1,3 @@
-
 .main-layout-wrapper {
     display: flex;           
 	margin: 0;
@@ -8,8 +7,36 @@
     position: relative;	
 	justify-content: flex-start;
 }
+.main-nav {
+	font-family: "Exo 2", sans-serif;
+    font-weight: 800;
+    font-style: normal;
+}
+
 body {
     background-color: #F6BD1F;
+}
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #1E424E;
+  display: flex; 
+  justify-content: space-between;
+}
+.spacer {
+    flex-grow: 1; 
+}
+ul li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+ul li a:hover {
+  background-color: #111111;
 }
 .heading {
 	position: absolute; 
@@ -24,16 +51,11 @@ body {
     font-style: normal;
     font-size: 70px;
 	color: #197C9D; 
-    /*text-shadow: 2px 2px 4px rgba(0,0,0,0.5); */
 	z-index: 10;
-	/*color: #F6BD1F;*/
 	background-color: transparent;
-
 }
-
 .left-side-container {
     background-image: url('sunrise.jpg');
-	/*border-radius: 1 em;*/
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -42,8 +64,6 @@ body {
     text-align:left;
 	margin-top:-70px
 }
-
-
 .right-side-container {
 	margin-top:80px;
     background-image: url('seedlings.jpg');
@@ -51,48 +71,61 @@ body {
     height: 300px;
     background-repeat: no-repeat;
 	align-self: flex-end;
-	/*margin-left: 150px;*/
 	margin-left: 500px;
 }
-
 .icon-container {
-	font-size: 70px;
 	margin-top:10px;
 	display: flex; 
     justify-content: space-around; 
     width: 100%;
+
+}
+.icon-container a {
+    text-decoration: none; 
+    color: black; 
+	font-family: "Exo 2", sans-serif;
+	font-weight:800;
+}
+.icon-container a > div {
+    display: flex;
+    flex-direction: column; 
+    align-items: center; 
 }
 
+.icon-container a i {
+    font-size: 50px; 
+    margin-bottom: 5px; 
+}
+
+.icon-container a span {
+    font-size: 16px; 
+    text-align: center;
 }
 .banner-line {
   border: none;
-  border-top: 5px solid black; 
-  margin: 0;
+  border-top: 2px solid #1E424E;  
 }
-
 .moving-banner-container {
   width: 100%;
   overflow: hidden; 
   background-color: #F6BD1F; 
   padding: 3px 0;
   white-space: nowrap; 
-  margin-top: 60px;
 }
-
 .idea-item {
-  color: #197C9D; 
+  color: #1E424E; 
   font-family: "Exo 2", sans-serif;
+  font-weight: 800;
+  font-style: normal;
   font-size: 17px;
   letter-spacing: 1px;
   padding-right: 1px;
   display: inline-block;
 }
-
 .line-content {
   display: inline-block;
   animation: scroll-left 500s linear infinite;
 }
-
 .moving-banner-container:hover .line-content {
   animation-play-state: paused;
 }
@@ -106,10 +139,8 @@ body {
     transform: translateX(-100%);
   }
 }
-
 .abouthead {
   font-family: "Exo 2", sans-serif;
-  font-optical-sizing: auto;
   font-weight: 900;
   font-style: normal;
   font-size: 80px;
@@ -285,3 +316,10 @@ font-family: "Exo 2", sans-serif;
             visibility: visible;
             color: black;
         }
+#backtotop{
+    position:fixed;
+    bottom:32px;
+    right:32px;
+    width:48px;
+    height:48px;
+}
