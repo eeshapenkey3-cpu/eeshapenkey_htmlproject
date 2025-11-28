@@ -1,47 +1,10 @@
-/*-----------------------------------------------------------------home---------------------------------------------------------------------------*/
-.main-layout-wrapper {
-    display: flex;           
-	margin: 0;
-    padding: 0;
-	width: 100%;
-    align-items: center;	 
-    position: relative;	
-	justify-content: flex-start;
-}
-.main-nav {
-	font-family: "Exo 2", sans-serif;
-    font-weight: 800;
-    font-style: normal;
-}
-
 body {
     background-color: #F6BD1F;
 	font-family: "Exo 2", sans-serif;
     font-weight: 400;
     font-style: normal;
 }
-ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  background-color: #1E424E;
-  display: flex; 
-  justify-content: space-between;
-}
-.spacer {
-    flex-grow: 1; 
-}
-ul li a {
-  display: block;
-  color: white;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-}
-ul li a:hover {
-  background-color: #111111;
-}
+/*index*/
 .heading {
 	position: absolute; 
     top: 50%;           
@@ -105,6 +68,46 @@ ul li a:hover {
     font-size: 16px; 
     text-align: center;
 }
+.main-layout-wrapper {
+    display: flex;           
+	margin: 0;
+    padding: 0;
+	width: 100%;
+    align-items: center;	 
+    position: relative;	
+	justify-content: flex-start;
+}
+
+/*navbar style*/
+.main-nav {
+	font-family: "Exo 2", sans-serif;
+    font-weight: 800;
+    font-style: normal;
+}
+.main-nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #1E424E;
+  display: flex; 
+  justify-content: space-between;
+}
+.spacer {
+    flex-grow: 1; 
+}
+.main-nav ul li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+.main-nav ul li a:hover {
+  background-color: #111111;
+}
+
+/*the moving text at the bottom*/
 .banner-line {
   border: none;
   border-top: 2px solid #1E424E;  
@@ -143,7 +146,7 @@ ul li a:hover {
     transform: translateX(-100%);
   }
 }
-/*---------------------------------------------------------------------about us-------------------------------------------------------------------*/
+/*about us*/
 .abouthead {
   font-family: "Exo 2", sans-serif;
   font-weight: 900;

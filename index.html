@@ -18,7 +18,7 @@
 
         <nav class="main-nav">
             <ul>
-			    <li><a href="home.html">Goal 7</a></li>
+			    <li><a href="index.html">Goal 7</a></li>
 				<li class="spacer"></li>
 				<li><a href="cleanenergy.html">Clean Energy</a></li>
                 <li><a href="goals.html">Goals by 2030</a></li>
@@ -105,9 +105,23 @@
 	</div>
 </div>
 <div class="banner-line"></div>
-<!--<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>-->
+  <div class="moving-banner-container p-0 m-0">
+    <div class="line-content" id="movingLine">
+      <span class="idea-item">IF YOU WANT TO MAKE THE WORLD A BETTER PLACE, TAKE A LOOK AT YOURSELF AND MAKE A CHANGE  ⚬</span>
+    </div>
+  </div>
+ 
+  <!-- attempted to use Javascript, didn't work
+  <script>
+    // Duplicate banner content until it's wide enough for a continuous -50% animation
+    document.addEventListener('DOMContentLoaded', ()=>{
+      const line = document.getElementById('movingLine');
+      if(!line) return;
+      const orig = line.innerHTML;
+      while(line.scrollWidth < window.innerWidth * 2) line.innerHTML += orig;
+    });
+  </script>-->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
 </body>
-<!-- git add .
-git commit -m "Added more content to homepage"
-git push origin master-->
+
 </html>
