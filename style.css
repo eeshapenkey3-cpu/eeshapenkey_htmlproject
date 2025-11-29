@@ -3,6 +3,7 @@ body {
 	font-family: "Exo 2", sans-serif;
     font-weight: 400;
     font-style: normal;
+	
 }
 /*index*/
 .heading {
@@ -176,6 +177,21 @@ body {
 .parent-container {
   display: flex;
   justify-content: flex-end; 
+    font-family: "Exo 2", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 350;
+  font-style: normal;
+  font-size: 25px;
+  width: 95%; 
+  max-width: 1400px; 
+  margin-left: 10px;
+  margin-right: auto;
+    margin-top: 30px; 
+    margin-bottom: 30px;
+    text-align: left; 
+    color: black; 
+    font-size: 18px;
+    line-height: 1.6;
 }
 
 .content-box {
@@ -191,9 +207,17 @@ body {
   margin-bottom: 10px;
   position: absolute;
   top: 0; 
-  right: -250px;
+  right: -270px;
 }
-
+.pic2{
+	float: right;
+	  margin-left: 30px; 
+  margin-bottom: 10px;
+  position: absolute;
+  top: 0; 
+  right: -550px;
+	
+}
 
 .members {
     display: flex; 
@@ -332,3 +356,28 @@ font-family: "Exo 2", sans-serif;
     width:48px;
     height:48px;
 }
+.images-wrapper {
+    display: flex; 
+    transition: transform 0.5s ease; 
+}
+.carousel-container {
+    overflow: hidden; 
+    width: 600px; 
+    position: relative;
+}
+.slide {
+    flex-shrink: 0; 
+	height: 100vh; 
+    display: flex;
+    flex-direction: column; 
+    justify-content: flex-end; 
+}
+.arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    z-index: 10;
+}
+#prevBtn { left: 10px; }
+#nextBtn { right: 10px; }
