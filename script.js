@@ -83,5 +83,41 @@ document.addEventListener('DOMContentLoaded', () => {
             console.log('❌ Form is invalid. Please complete all required fields.');
         }
     });
+
+    const carouselContainer = document.querySelector('.carousel-container');
+    const imagesWrapper = carouselContainer ? carouselContainer.querySelector('.images-wrapper') : null;
+    const slides = imagesWrapper ? Array.from(imagesWrapper.querySelectorAll('.slide')) : [];
+
+    if (carouselContainer && imagesWrapper && slides.length > 0) {
+        let currentIndex = 0;
+        let slideWidth = carouselContainer.clientWidth;
+
+        function updateSizes() {
+            slideWidth = carouselContainer.clientWidth;
+            slides.forEach(s => { s.style.width = slideWidth + 'px'; });
+            imagesWrapper.style.transform = `translateX(${ -currentIndex * slideWidth }px)`;
+        }
+
+        updateSizes();
+        window.addEventListener('resize', updateSizes);
+
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+
+        function goTo(index) {
+            currentIndex = (index + slides.length) % slides.length;
+            imagesWrapper.style.transform = `translateX(${ -currentIndex * slideWidth }px)`;
+        }
+
+        if (prevBtn) prevBtn.addEventListener('click', () => goTo(currentIndex - 1));
+        if (nextBtn) nextBtn.addEventListener('click', () => goTo(currentIndex + 1));
+    }
+
+    // Enlarge images on hover (adds/removes a class so CSS handles the animation)
+    const hoverTargets = document.querySelectorAll('.media-top-img, .media-column .slide');
+    hoverTargets.forEach(img => {
+        img.addEventListener('pointerenter', () => img.classList.add('hover-enlarge'));
+        img.addEventListener('pointerleave', () => img.classList.remove('hover-enlarge'));
+    });
 });
 
