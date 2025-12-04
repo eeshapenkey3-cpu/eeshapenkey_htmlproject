@@ -1,123 +1,67 @@
-
-document.addEventListener('DOMContentLoaded', () => {
-
-    const formSection = document.querySelector('.form-section form');
-    const fullNameInput = document.getElementById('full-name');
-    const emailInput = document.getElementById('email');
-    const messageTextarea = document.getElementById('message');
-    const robotCheckbox = document.querySelector('.checkbox-group input[type="checkbox"]');
-
-    if (!formSection) {
-        console.error('Form element not found. Please check the HTML selector.');
-        return; 
-    }
-
-    function validateField(element) {
-
-        if (element.type === 'checkbox') {
-            return element.checked;
-        }
-
-        if (element.value.trim() === '') {
-            return false;
-        }
-
-        if (element.id === 'email') {
-            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            return emailRegex.test(element.value.trim());
-        }
-
-        return true;
-    }
-
-
-    function toggleErrorState(element, isValid) {
-        const parentGroup = element.closest('.input-group') || element.closest('.checkbox-group');
-        
-        if (parentGroup) {
-            if (!isValid) {
-                parentGroup.classList.add('error');
+        function displayError(elementId, isVisible, message = '') {
+            const errorElement = document.getElementById(elementId);
+            if (isVisible) {
+                errorElement.textContent = message;
+                errorElement.classList.remove('hidden');
             } else {
-                parentGroup.classList.remove('error');
+                errorElement.classList.add('hidden');
             }
         }
-    }
 
-    formSection.addEventListener('submit', function(event) {
 
-        event.preventDefault();
+        function validateForm(event) {
+            event.preventDefault(); 
+            let isValid = true;
 
-        let formIsValid = true;
+            const requiredTextFields = [
+                { id: 'fullName', errorId: 'fullNameError', message: 'Full name cannot be empty.' },
+                { id: 'message', errorId: 'messageError', message: 'A message is required.' }
+            ];
 
-        const requiredElements = [fullNameInput, emailInput, messageTextarea, robotCheckbox];
+            requiredTextFields.forEach(field => {
+                const value = document.getElementById(field.id).value.trim();
+                if (value === '') {
+                    displayError(field.errorId, true, field.message);
+                    isValid = false;
+                } else {
+                    displayError(field.errorId, false);
+                }
+            });
 
-        requiredElements.forEach(element => {
-            const isValid = validateField(element);
-            toggleErrorState(element, isValid); 
-            
-            if (!isValid) {
-                formIsValid = false;
+            const emailInput = document.getElementById('email');
+            const emailValue = emailInput.value.trim();
+            if (emailValue === '') {
+                displayError('emailError', true, 'Email cannot be empty.');
+                isValid = false;
+            } else if (!emailRegex.test(emailValue)) {
+                displayError('emailError', true, 'Please enter a valid email address (e.g., user@example.com).');
+                isValid = false;
+            } else {
+                displayError('emailError', false);
             }
-        });
 
-        if (formIsValid) {
-            console.log('✅ Form is valid! Capturing data...');
+            const robotCheck = document.getElementById('robotCheck').checked;
+            if (!robotCheck) {
+                isValid = false;
+            }
+            if (isValid) {
 
-            const formData = new FormData(formSection);
-            
+                console.log('Form is valid. Submitting data:', { 
+                    fullName: document.getElementById('fullName').value.trim(), 
+                    email: emailValue, 
+                    message: document.getElementById('message').value.trim() 
+                });
+                console.log('SUCCESS: Form submitted and reset.'); 
+                
 
-            const dataToLog = Object.fromEntries(formData.entries());
-            
- 
-            console.log('--- FORM SUBMISSION DATA CAPTURED ---');
-            console.log(dataToLog); 
-            console.log('JSON Format (copyable):');
-            console.log(JSON.stringify(dataToLog, null, 2)); 
-            console.log('-----------------------------------');
+                document.getElementById('contactForm').reset();
+            } else {
 
-            alert('You have submitted'); 
+                const firstInvalid = document.querySelector('.input-group p:not(.hidden)').previousElementSibling;
+                if (firstInvalid) {
+                    firstInvalid.focus();
+                }
+            }
 
-            formSection.reset();
-            
-        } else {
-            console.log('❌ Form is invalid. Please complete all required fields.');
+            return false; 
         }
-    });
-
-    const carouselContainer = document.querySelector('.carousel-container');
-    const imagesWrapper = carouselContainer ? carouselContainer.querySelector('.images-wrapper') : null;
-    const slides = imagesWrapper ? Array.from(imagesWrapper.querySelectorAll('.slide')) : [];
-
-    if (carouselContainer && imagesWrapper && slides.length > 0) {
-        let currentIndex = 0;
-        let slideWidth = carouselContainer.clientWidth;
-
-        function updateSizes() {
-            slideWidth = carouselContainer.clientWidth;
-            slides.forEach(s => { s.style.width = slideWidth + 'px'; });
-            imagesWrapper.style.transform = `translateX(${ -currentIndex * slideWidth }px)`;
-        }
-
-        updateSizes();
-        window.addEventListener('resize', updateSizes);
-
-        const prevBtn = document.getElementById('prevBtn');
-        const nextBtn = document.getElementById('nextBtn');
-
-        function goTo(index) {
-            currentIndex = (index + slides.length) % slides.length;
-            imagesWrapper.style.transform = `translateX(${ -currentIndex * slideWidth }px)`;
-        }
-
-        if (prevBtn) prevBtn.addEventListener('click', () => goTo(currentIndex - 1));
-        if (nextBtn) nextBtn.addEventListener('click', () => goTo(currentIndex + 1));
-    }
-
-    // Enlarge images on hover (adds/removes a class so CSS handles the animation)
-    const hoverTargets = document.querySelectorAll('.media-top-img, .media-column .slide');
-    hoverTargets.forEach(img => {
-        img.addEventListener('pointerenter', () => img.classList.add('hover-enlarge'));
-        img.addEventListener('pointerleave', () => img.classList.remove('hover-enlarge'));
-    });
-});
-
